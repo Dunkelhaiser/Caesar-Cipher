@@ -9,10 +9,19 @@ This library has TypeScript and JSDoc support.
 ## Installation
 
 ```sh
-npm install @dunkelhaiser/caesar-cipher       # npm
-yarn add @dunkelhaiser/caesar-cipher          # yarn
-pnpm add @dunkelhaiser/caesar-cipher          # pnpm
-bun add @dunkelhaiser/caesar-cipher           # bun
+npm install @dunkelhaiser/caesar-cipher
+```
+
+```sh
+yarn add @dunkelhaiser/caesar-cipher
+```
+
+```sh
+pnpm add @dunkelhaiser/caesar-cipher
+```
+
+```sh
+bun add @dunkelhaiser/caesar-cipher
 ```
 
 ## Basic usage
