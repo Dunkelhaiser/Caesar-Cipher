@@ -3,49 +3,49 @@ import { CaesarCipher } from "./index";
 
 describe("caesar cipher", () => {
     describe("latin support", () => {
+        const decryptedText = "Hello My Beautiful World!";
+        const encryptedText = "Olssv Tf Ilhbapmbs Dvysk!";
         it("returns crypted string in latin alphabet", () => {
-            const text = "Hello My Beautiful World!";
-            const result = CaesarCipher.encrypt(text, 7);
-            expect(result).toBe("Olssv Tf Ilhbapmbs Dvysk!");
+            const result = CaesarCipher.encrypt(decryptedText, 7);
+            expect(result).toBe(encryptedText);
         });
         it("returns decrypted string in latin alphabet", () => {
-            const text = "Olssv Tf Ilhbapmbs Dvysk!";
-            const result = CaesarCipher.decrypt(text, 7);
-            expect(result).toBe("Hello My Beautiful World!");
+            const result = CaesarCipher.decrypt(encryptedText, 7);
+            expect(result).toBe(decryptedText);
         });
     });
 
     describe("cyryllic support", () => {
+        const decryptedText = "Привіт мій прекрасний диво-світ!";
+        const encryptedText = "Цчнзощ уор цчйсчєшфнр їнзх-шзощ!";
         it("returns crypted string in cyrylic alphabet", () => {
-            const text = "Привіт мій прекрасний диво-світ!";
-            const result = CaesarCipher.encrypt(text, 7, "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя");
-            expect(result).toBe("Цчнзощ уор цчйсчєшфнр їнзх-шзощ!");
+            const result = CaesarCipher.encrypt(decryptedText, 7, "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя");
+            expect(result).toBe(encryptedText);
         });
         it("returns decrypted string in cyrylic alphabet", () => {
-            const text = "Цчнзощ уор цчйсчєшфнр їнзх-шзощ!";
-            const result = CaesarCipher.decrypt(text, 7, "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя");
-            expect(result).toBe("Привіт мій прекрасний диво-світ!");
+            const result = CaesarCipher.decrypt(encryptedText, 7, "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя");
+            expect(result).toBe(decryptedText);
         });
     });
 
     describe("japanese support", () => {
+        const decryptedText = "ハロー・マイ・ビューティフル・ワールド!";
+        const encryptedText = "ブヴー・ュカ・ペレーネオボヲ・アーヲバ!";
         it("returns crypted string in hiragana", () => {
-            const text = "ハロー・マイ・ビューティフル・ワールド!";
             const result = CaesarCipher.encrypt(
-                text,
+                decryptedText,
                 7,
                 "ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴ"
             );
-            expect(result).toBe("ブヴー・ュカ・ペレーネオボヲ・アーヲバ!");
+            expect(result).toBe(encryptedText);
         });
         it("returns decrypted string in hiragana", () => {
-            const text = "ブヴー・ュカ・ペレーネオボヲ・アーヲバ!";
             const result = CaesarCipher.decrypt(
-                text,
+                encryptedText,
                 7,
                 "ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴ"
             );
-            expect(result).toBe("ハロー・マイ・ビューティフル・ワールド!");
+            expect(result).toBe(decryptedText);
         });
     });
 
