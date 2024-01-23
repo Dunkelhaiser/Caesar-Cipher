@@ -18,8 +18,9 @@ export class CaesarCipher {
         decrypt: boolean = false
     ): string {
         const alphabetLength = alphabet.length;
+        const alphabetLower = alphabet.toLowerCase();
         // Check if the character is in the provided alphabet (both uppercase and lowercase)
-        const charIndex = alphabet.indexOf(char.toLowerCase());
+        const charIndex = alphabetLower.indexOf(char.toLowerCase());
 
         // Check if the character is in the alphabet
         if (charIndex !== -1) {
@@ -28,8 +29,8 @@ export class CaesarCipher {
             const effectiveShift = decrypt ? -Math.abs(shift) : Math.abs(shift);
             const shiftIndex = (charIndex + effectiveShift) % alphabetLength;
             const shiftedChar = isUpperCase
-                ? alphabet.charAt(shiftIndex < 0 ? shiftIndex + alphabetLength : shiftIndex).toUpperCase()
-                : alphabet.charAt(shiftIndex < 0 ? shiftIndex + alphabetLength : shiftIndex);
+                ? alphabetLower.charAt(shiftIndex < 0 ? shiftIndex + alphabetLength : shiftIndex).toUpperCase()
+                : alphabetLower.charAt(shiftIndex < 0 ? shiftIndex + alphabetLength : shiftIndex);
 
             return shiftedChar;
         }
