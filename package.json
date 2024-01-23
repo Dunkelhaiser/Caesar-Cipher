@@ -1,0 +1,53 @@
+{
+    "name": "@dunkelhaiser/caesar-cipher",
+    "version": "1.0.0",
+    "description": "Implementation of the Caesar Cipher encryption algorithm in JavaScript. The Caesar Cipher is a classic substitution cipher technique where each letter in the plaintext is shifted a certain number of places down or up the alphabet.",
+    "private": false,
+    "keywords": [],
+    "author": "Kyrylo Tymchyshyn",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Dunkelhaiser/Caesar-Cipher.git"
+    },
+    "homepage": "https://github.com/Dunkelhaiser/Caesar-Cipher",
+    "funding": {
+        "type": "ko-fi",
+        "url": "https://ko-fi.com/dunkelhaiser"
+    },
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsup src/index.ts --format cjs,esm --dts",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "lint:fix": "eslint . --fix --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "format": "prettier -uw --cache --ignore-path .gitignore .",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "ci": "pnpm run lint && pnpm run test && pnpm run build",
+        "release": "pnpm run lint && pnpm run test && pnpm run build && changeset publish",
+        "prepare": "husky install"
+    },
+    "devDependencies": {
+        "@changesets/cli": "^2.27.1",
+        "@typescript-eslint/eslint-plugin": "^6.17.0",
+        "@typescript-eslint/parser": "^6.17.0",
+        "eslint": "^8.56.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-airbnb-typescript": "^17.1.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-import-resolver-typescript": "^3.6.1",
+        "eslint-plugin-import": "^2.29.1",
+        "husky": "^8.0.0",
+        "lint-staged": "^15.2.0",
+        "prettier": "^3.1.1",
+        "tsup": "^8.0.1",
+        "typescript": "^5.3.3",
+        "vitest": "^1.1.3"
+    },
+    "lint-staged": {
+        "./src/**/*": "prettier -uw --cache",
+        "./src/**/*.{ts,tsx}": "eslint --fix --report-unused-disable-directives --max-warnings 0"
+    }
+}

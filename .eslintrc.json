@@ -1,0 +1,36 @@
+{
+    "root": true,
+    "env": {
+        "browser": false,
+        "es2020": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "extends": ["airbnb-base", "airbnb-typescript/base", "prettier"],
+    "rules": {
+        "no-unreachable": "error",
+        "no-plusplus": "off",
+        "@typescript-eslint/lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+        "import/order": [
+            "warn",
+            {
+                "pathGroups": [
+                    {
+                        "pattern": "$/**",
+                        "group": "internal"
+                    }
+                ],
+                "pathGroupsExcludedImportTypes": ["builtin"],
+                "groups": [["builtin", "external"], ["internal"], ["parent", "sibling", "index"], "unknown"],
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                }
+            }
+        ],
+        "import/no-default-export": "error",
+        "import/prefer-default-export": "off"
+    },
+    "parserOptions": {
+        "project": ["./tsconfig.json"]
+    }
+}
