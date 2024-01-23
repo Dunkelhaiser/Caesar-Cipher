@@ -28,8 +28,16 @@ bun add @dunkelhaiser/caesar-cipher
 
 ### Import
 
+Using ESM
+
 ```ts
 import { CaesarCipher } from "@dunkelhaiser/caesar-cipher";
+```
+
+Using CommonJS
+
+```ts
+const { CaesarCipher } = require("@dunkelhaiser/caesar-cipher");
 ```
 
 ### Encrypt a string
