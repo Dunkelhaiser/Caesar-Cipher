@@ -6,7 +6,6 @@
     },
     "parser": "@typescript-eslint/parser",
     "extends": ["airbnb-base", "airbnb-typescript/base", "plugin:jsdoc/recommended-typescript-error", "prettier"],
-    "ignorePatterns": ["index.ts"],
     "rules": {
         "no-unreachable": "error",
         "no-plusplus": "off",
@@ -32,6 +31,14 @@
         "import/prefer-default-export": "off",
         "jsdoc/tag-lines": ["error", "any", { "startLines": 1 }]
     },
+    "overrides": [
+        {
+            "files": ["index.ts"],
+            "rules": {
+                "import/no-default-export": "off"
+            }
+        }
+    ],
     "parserOptions": {
         "project": ["./tsconfig.json"]
     }
