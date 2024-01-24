@@ -60,4 +60,10 @@ describe("caesar cipher", () => {
         const result = CaesarCipher.encrypt(text, 7, "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
         expect(result).toBe("Olssv Tf Ilhbapmbs Dvysk!");
     });
+
+    it("can work with arrays of strings", () => {
+        const strArr = ["Hello", "My", "Beautiful", "World!"];
+        const result = CaesarCipher.encrypt(strArr, 7);
+        expect(result).toStrictEqual(["Olssv", "Tf", "Ilhbapmbs", "Dvysk!"]);
+    });
 });
