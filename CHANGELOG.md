@@ -1,5 +1,11 @@
 # @dunkelhaiser/caesar-cipher
 
+## 1.1.1
+
+### Patch Changes
+
+- 8d6fe60: Refactored code
+
 ## 1.1.0
 
 ### Minor Changes
