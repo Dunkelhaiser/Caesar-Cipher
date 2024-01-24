@@ -76,7 +76,7 @@ CaesarCipher.encrypt("Привіт мій прекрасний диво-світ
 
 If you come across a bug or unexpected behavior, please take the time to report it. To file a bug report:
 
-1. Check if the issue has already been reported by searching the issue tracker.
+1. Check if the issue has already been reported by searching the [issues](https://github.com/Dunkelhaiser/Caesar-Cipher/issues).
 2. If the issue hasn't been reported yet, open a new issue, providing as much detail as possible, including:
 
 - A clear and concise title.
@@ -88,7 +88,7 @@ If you come across a bug or unexpected behavior, please take the time to report 
 
 To propose a new feature:
 
-1. Check the issue tracker to ensure it hasn't been proposed before.
+1. Check the [issues](https://github.com/Dunkelhaiser/Caesar-Cipher/issues) to ensure it hasn't been proposed before.
 2. Open a new issue, clearly describing the new feature or enhancement you would like to see.
 3. Provide any relevant details or use cases that will help understand the use of the proposed feature.
 
