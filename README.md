@@ -26,7 +26,7 @@ bun add @dunkelhaiser/caesar-cipher
 
 ## Basic usage
 
-### Import
+### Importing the Library
 
 Using ESM
 
@@ -54,6 +54,8 @@ CaesarCipher.decrypt("Olssv Tf Ilhbapmbs Dvysk!", 7); // => "Hello My Beautiful 
 
 ### Use own alphabet
 
+If you wish to use a custom alphabet for encryption and decryption, you can provide it as the third parameter:
+
 ```ts
 CaesarCipher.encrypt("Привіт мій прекрасний диво-світ!", 7, "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя"); // => "Цчнзощ уор цчйсчєшфнр їнзх-шзощ!"
 ```
@@ -70,7 +72,37 @@ CaesarCipher.encrypt("Привіт мій прекрасний диво-світ
 
 ## Contributing
 
-When contributing, please follow the coding style, add unit tests for everything you change and either add changes to README and CHANGELOG( with changeset ) yourself or write a detailed description of your changes in the pull request.
+### Bug Reporting
+
+If you come across a bug or unexpected behavior, please take the time to report it. To file a bug report:
+
+1. Check if the issue has already been reported by searching the issue tracker.
+2. If the issue hasn't been reported yet, open a new issue, providing as much detail as possible, including:
+
+- A clear and concise title.
+- A detailed description of the issue.
+- Steps to reproduce the problem.
+- Expected and actual behavior.
+
+### Feature Proposals
+
+To propose a new feature:
+
+1. Check the issue tracker to ensure it hasn't been proposed before.
+2. Open a new issue, clearly describing the new feature or enhancement you would like to see.
+3. Provide any relevant details or use cases that will help understand the use of the proposed feature.
+
+### Code Contributions
+
+To contribute code:
+
+1. Fork the repository.
+2. Create a new branch for your changes with a specific prefix: `git checkout -b feat/your-feature`. Accepted prefixes: feat, fix, refactor, docs.
+3. Make your changes, following the coding style.
+4. Write unit tests for your changes.
+5. Update the README or documentation if necessary.
+6. Submit a pull request to the dev branch of the original repository.
+7. Provide a detailed description in the pull request, explaining the purpose of your changes.
 
 ## License
 
