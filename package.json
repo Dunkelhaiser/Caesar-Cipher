@@ -7,9 +7,13 @@
         "cipher",
         "caesar",
         "shift",
+        "shifting",
         "caesar-cipher",
+        "alphabet",
         "encryption",
         "decryption",
+        "encode",
+        "decode",
         "cryptography",
         "utils",
         "tools"
