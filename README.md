@@ -2,9 +2,12 @@
 
 Implementation of the Caesar Cipher encryption algorithm in JavaScript. The Caesar Cipher is a classic substitution cipher technique where each letter in the plaintext is shifted a certain number of places down or up the alphabet.
 
-## Info
+## Features
 
-This library has TypeScript and JSDoc support.
+- TypeScript and JSDoc support
+- User-defined alphabets
+- Support of array inputs and returns
+- Encryption and decryption
 
 ## Installation
 
@@ -52,6 +55,12 @@ CaesarCipher.encrypt("Hello My Beautiful World!", 7); // => "Olssv Tf Ilhbapmbs 
 CaesarCipher.decrypt("Olssv Tf Ilhbapmbs Dvysk!", 7); // => "Hello My Beautiful World!"
 ```
 
+### Provide an array as a parameter
+
+```ts
+CaesarCipher.encrypt(["Hello", "My", "Beautiful", "World!"], 7); // => ["Olssv", "Tf", "Ilhbapmbs", "Dvysk!"]
+```
+
 ### Use own alphabet
 
 If you wish to use a custom alphabet for encryption and decryption, you can provide it as the third parameter:
@@ -64,11 +73,11 @@ CaesarCipher.encrypt("Привіт мій прекрасний диво-світ
 
 ### encrypt(input, shift, alphabet) | decrypt(input, shift, alphabet)
 
-| Name     | Type     | Argument     | Default                      | Description                        |
-| -------- | -------- | ------------ | ---------------------------- | ---------------------------------- |
-| input    | `string` | `<required>` |                              | text to be encrypted               |
-| shift    | `number` | `<required>` |                              | amount to shift each character by  |
-| alphabet | `string` | `<optional>` | `abcdefghijklmnopqrstuvwxyz` | alphabet to be used for the cipher |
+| Name     | Type                 | Argument     | Default                      | Description                        |
+| -------- | -------------------- | ------------ | ---------------------------- | ---------------------------------- |
+| input    | `string \| string[]` | `<required>` |                              | text to be encrypted               |
+| shift    | `number`             | `<required>` |                              | amount to shift each character by  |
+| alphabet | `string`             | `<optional>` | `abcdefghijklmnopqrstuvwxyz` | alphabet to be used for the cipher |
 
 ## Contributing
 

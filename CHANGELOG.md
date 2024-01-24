@@ -1,5 +1,11 @@
 # @dunkelhaiser/caesar-cipher
 
+## 1.1.0
+
+### Minor Changes
+
+- Added support of array input
+
 ## 1.0.2
 
 ### Patch Changes

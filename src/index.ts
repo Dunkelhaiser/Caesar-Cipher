@@ -5,11 +5,11 @@ export class CaesarCipher {
     /**
      * Shifts a given character by a specified amount within the provided alphabet.
      *
-     * @param char - character to be shifted
-     * @param shift - amount to shift the character by, cannot be negative
-     * @param alphabet - alphabet to be used for the cipher (defaults to English alphabet)
-     * @param decrypt - if true, performs decryption by shifting in the opposite direction
-     * @returns shifted character
+     * @param {string} char - character to be shifted
+     * @param {number} shift - amount to shift the character by, cannot be negative
+     * @param {string=} alphabet - alphabet to be used for the cipher (defaults to English alphabet)
+     * @param {boolean} decrypt - if true, performs decryption by shifting in the opposite direction
+     * @returns {string} shifted character
      */
     private static shiftChar(
         char: string,
@@ -41,30 +41,46 @@ export class CaesarCipher {
     /**
      * Encrypts a given input string.
      *
-     * @param input - text to be encrypted
-     * @param shift - amount to shift each character by, cannot be negative (will be converted to positive)
-     * @param alphabet - alphabet to be used for the cipher (defaults to English alphabet)
-     * @returns encrypted string
+     * @param {(string|Array.<string>)} input - text to be encrypted
+     * @param {number} shift - amount to shift each character by, cannot be negative (will be converted to positive)
+     * @param {string=} alphabet - alphabet to be used for the cipher (defaults to English alphabet)
+     * @returns {(string|Array.<string>)} encrypted string
      */
-    static encrypt(input: string, shift: number, alphabet?: string): string {
+    static encrypt<T extends string | string[]>(input: T, shift: number, alphabet?: string): T {
+        if (Array.isArray(input)) {
+            return input.map((str) =>
+                str
+                    .split("")
+                    .map((char) => this.shiftChar(char, shift, alphabet, false))
+                    .join("")
+            ) as T;
+        }
         return input
             .split("")
             .map((char) => this.shiftChar(char, shift, alphabet, false))
-            .join("");
+            .join("") as T;
     }
 
     /**
      * Decrypts a given input string.
      *
-     * @param input - text to be decrypted
-     * @param shift - amount to shift each character by, cannot be negative (will be converted to positive)
-     * @param alphabet - alphabet to be used for the cipher (defaults to English alphabet)
-     * @returns decrypted string
+     * @param {(string|Array.<string>)} input - text to be decrypted
+     * @param {number} shift - amount to shift each character by, cannot be negative (will be converted to positive)
+     * @param {string=} alphabet - alphabet to be used for the cipher (defaults to English alphabet)
+     * @returns {(string|Array.<string>)} decrypted string
      */
-    static decrypt(input: string, shift: number, alphabet?: string): string {
+    static decrypt<T extends string | string[]>(input: T, shift: number, alphabet?: string): T {
+        if (Array.isArray(input)) {
+            return input.map((str) =>
+                str
+                    .split("")
+                    .map((char) => this.shiftChar(char, shift, alphabet, true))
+                    .join("")
+            ) as T;
+        }
         return input
             .split("")
             .map((char) => this.shiftChar(char, shift, alphabet, true))
-            .join("");
+            .join("") as T;
     }
 }
