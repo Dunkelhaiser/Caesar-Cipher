@@ -1,5 +1,5 @@
 import { it, expect, describe } from "vitest";
-import { CaesarCipher } from "./index";
+import DefaultCipher, { CaesarCipher, encrypt } from "./index";
 
 describe("caesar cipher", () => {
     describe("latin support", () => {
@@ -65,5 +65,26 @@ describe("caesar cipher", () => {
         const strArr = ["Hello", "My", "Beautiful", "World!"];
         const result = CaesarCipher.encrypt(strArr, 7);
         expect(result).toStrictEqual(["Olssv", "Tf", "Ilhbapmbs", "Dvysk!"]);
+    });
+
+    describe("import types", () => {
+        it("supports named method imports", () => {
+            const decryptedText = "Hello My Beautiful World!";
+            const encryptedText = "Olssv Tf Ilhbapmbs Dvysk!";
+            const result = encrypt(decryptedText, 7);
+            expect(result).toBe(encryptedText);
+        });
+        it("supports default object import", () => {
+            const decryptedText = "Hello My Beautiful World!";
+            const encryptedText = "Olssv Tf Ilhbapmbs Dvysk!";
+            const result = DefaultCipher.encrypt(decryptedText, 7);
+            expect(result).toBe(encryptedText);
+        });
+        it("supports named object import", () => {
+            const decryptedText = "Hello My Beautiful World!";
+            const encryptedText = "Olssv Tf Ilhbapmbs Dvysk!";
+            const result = CaesarCipher.encrypt(decryptedText, 7);
+            expect(result).toBe(encryptedText);
+        });
     });
 });
