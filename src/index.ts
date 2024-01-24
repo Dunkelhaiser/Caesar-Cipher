@@ -64,10 +64,10 @@ export class CaesarCipher {
     /**
      * Decrypts a given input string.
      *
-     * @param {(string|Array.<string>)} input - text to be encrypted
+     * @param {(string|Array.<string>)} input - text to be decrypted
      * @param {number} shift - amount to shift each character by, cannot be negative (will be converted to positive)
      * @param {string=} alphabet - alphabet to be used for the cipher (defaults to English alphabet)
-     * @returns {(string|Array.<string>)} encrypted string
+     * @returns {(string|Array.<string>)} decrypted string
      */
     static decrypt<T extends string | string[]>(input: T, shift: number, alphabet?: string): T {
         if (Array.isArray(input)) {
