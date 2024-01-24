@@ -31,16 +31,38 @@ bun add @dunkelhaiser/caesar-cipher
 
 ### Importing the Library
 
-Using ESM
+#### Using ESM
+
+With named import
 
 ```ts
 import { CaesarCipher } from "@dunkelhaiser/caesar-cipher";
 ```
 
-Using CommonJS
+With named imports
 
 ```ts
-const { CaesarCipher } = require("@dunkelhaiser/caesar-cipher");
+import { encrypt, decrypt } from "@dunkelhaiser/caesar-cipher";
+```
+
+With default import
+
+```ts
+import CaesarCipher from "@dunkelhaiser/caesar-cipher";
+```
+
+Using CommonJS
+
+With default import
+
+```ts
+const CaesarCipher = require("@dunkelhaiser/caesar-cipher");
+```
+
+With named imports
+
+```ts
+const { encrypt, decrypt } = require("@dunkelhaiser/caesar-cipher");
 ```
 
 ### Encrypt a string
