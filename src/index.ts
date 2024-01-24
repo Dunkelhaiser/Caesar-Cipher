@@ -39,6 +39,21 @@ export class CaesarCipher {
     }
 
     /**
+     * Processes a given string.
+     *
+     * @param {(string|Array.<string>)} input - text to be encrypted
+     * @param {number} shift - amount to shift each character by, cannot be negative (will be converted to positive)
+     * @param {string=} alphabet - alphabet to be used for the cipher (defaults to English alphabet)
+     * @param {boolean} decrypt - if true, performs decryption by shifting in the opposite direction
+     * @returns {(string|Array.<string>)} encrypted string
+     */
+    private static processString = (input: string, shift: number, alphabet?: string, decrypt?: boolean): string =>
+        input
+            .split("")
+            .map((char) => this.shiftChar(char, shift, alphabet, decrypt))
+            .join("");
+
+    /**
      * Encrypts a given input string.
      *
      * @param {(string|Array.<string>)} input - text to be encrypted
@@ -48,17 +63,9 @@ export class CaesarCipher {
      */
     static encrypt<T extends string | string[]>(input: T, shift: number, alphabet?: string): T {
         if (Array.isArray(input)) {
-            return input.map((str) =>
-                str
-                    .split("")
-                    .map((char) => this.shiftChar(char, shift, alphabet, false))
-                    .join("")
-            ) as T;
+            return input.map((str) => this.processString(str, shift, alphabet, false)) as T;
         }
-        return input
-            .split("")
-            .map((char) => this.shiftChar(char, shift, alphabet, false))
-            .join("") as T;
+        return this.processString(input, shift, alphabet, false) as T;
     }
 
     /**
@@ -71,16 +78,8 @@ export class CaesarCipher {
      */
     static decrypt<T extends string | string[]>(input: T, shift: number, alphabet?: string): T {
         if (Array.isArray(input)) {
-            return input.map((str) =>
-                str
-                    .split("")
-                    .map((char) => this.shiftChar(char, shift, alphabet, true))
-                    .join("")
-            ) as T;
+            return input.map((str) => this.processString(str, shift, alphabet, true)) as T;
         }
-        return input
-            .split("")
-            .map((char) => this.shiftChar(char, shift, alphabet, true))
-            .join("") as T;
+        return this.processString(input, shift, alphabet, true) as T;
     }
 }
