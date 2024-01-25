@@ -51,7 +51,7 @@ With default import
 import CaesarCipher from "@dunkelhaiser/caesar-cipher";
 ```
 
-Using CommonJS
+### Using CommonJS
 
 With default import
 
