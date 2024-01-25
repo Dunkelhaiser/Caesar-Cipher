@@ -1,5 +1,11 @@
 # @dunkelhaiser/caesar-cipher
 
+## 2.0.2
+
+### Patch Changes
+
+- Fixed documentation CJS title typo
+
 ## 2.0.1
 
 ### Patch Changes
