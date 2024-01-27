@@ -4,10 +4,10 @@ Implementation of the Caesar Cipher encryption algorithm in JavaScript. The Caes
 
 ## Features
 
--   TypeScript and JSDoc support
--   User-defined alphabets
--   Support of array inputs and returns
--   Encryption and decryption
+- TypeScript and JSDoc support
+- User-defined alphabets
+- Support of array inputs and returns
+- Encryption and decryption
 
 ## Installation
 
@@ -119,10 +119,10 @@ If you come across a bug or unexpected behavior, please take the time to report 
 1. Check if the issue has already been reported by searching the [issues](https://github.com/Dunkelhaiser/Caesar-Cipher/issues).
 2. If the issue hasn't been reported yet, open a new issue, providing as much detail as possible, including:
 
--   A clear and concise title.
--   A detailed description of the issue.
--   Steps to reproduce the problem.
--   Expected and actual behavior.
+- A clear and concise title.
+- A detailed description of the issue.
+- Steps to reproduce the problem.
+- Expected and actual behavior.
 
 ### Feature Proposals
 
