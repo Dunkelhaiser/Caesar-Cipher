@@ -49,6 +49,19 @@ describe("caesar cipher", () => {
         });
     });
 
+    describe("numeric support", () => {
+        const decryptedText = "12345";
+        const encryptedText = "67890";
+        it("does not shift numbers if they are not provided in alphabet", () => {
+            const result = CaesarCipher.encrypt(decryptedText, 5);
+            expect(result).toBe(decryptedText);
+        });
+        it("does shift numbers if they are provided in alphabet", () => {
+            const result = CaesarCipher.encrypt(decryptedText, 5, "0123456789");
+            expect(result).toBe(encryptedText);
+        });
+    });
+
     it("if provided shift is negative convert it to positive", () => {
         const text = "Hello My Beautiful World!";
         const result = CaesarCipher.encrypt(text, -7);
