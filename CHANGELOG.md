@@ -1,5 +1,11 @@
 # @dunkelhaiser/caesar-cipher
 
+## 2.0.5
+
+### Patch Changes
+
+- Reordered alphabet support in documentation
+
 ## 2.0.4
 
 ### Patch Changes
