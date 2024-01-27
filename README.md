@@ -4,10 +4,10 @@ Implementation of the Caesar Cipher encryption algorithm in JavaScript. The Caes
 
 ## Features
 
-- TypeScript and JSDoc support
-- User-defined alphabets
-- Support of array inputs and returns
-- Encryption and decryption
+-   TypeScript and JSDoc support
+-   User-defined alphabets
+-   Support of array inputs and returns
+-   Encryption and decryption
 
 ## Installation
 
@@ -83,6 +83,14 @@ CaesarCipher.decrypt("Olssv Tf Ilhbapmbs Dvysk!", 7); // => "Hello My Beautiful 
 CaesarCipher.encrypt(["Hello", "My", "Beautiful", "World!"], 7); // => ["Olssv", "Tf", "Ilhbapmbs", "Dvysk!"]
 ```
 
+### Use own alphabet
+
+If you wish to use a custom alphabet for encryption and decryption, you can provide it as the third parameter:
+
+```ts
+CaesarCipher.encrypt("Привіт мій прекрасний диво-світ!", 7, "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя"); // => "Цчнзощ уор цчйсчєшфнр їнзх-шзощ!"
+```
+
 ### Numeric Support
 
 If numbers are provided in the alphabet they also will be shifted, otherwise they stay untouched.
@@ -90,14 +98,6 @@ If numbers are provided in the alphabet they also will be shifted, otherwise the
 ```ts
 CaesarCipher.encrypt("12345", 5); // => "12345"
 CaesarCipher.encrypt("12345", 5, "0123456789"); // => "67890"
-```
-
-### Use own alphabet
-
-If you wish to use a custom alphabet for encryption and decryption, you can provide it as the third parameter:
-
-```ts
-CaesarCipher.encrypt("Привіт мій прекрасний диво-світ!", 7, "абвгґдеєжзиіїйклмнопрстуфхцчшщьюя"); // => "Цчнзощ уор цчйсчєшфнр їнзх-шзощ!"
 ```
 
 ## API
@@ -119,10 +119,10 @@ If you come across a bug or unexpected behavior, please take the time to report 
 1. Check if the issue has already been reported by searching the [issues](https://github.com/Dunkelhaiser/Caesar-Cipher/issues).
 2. If the issue hasn't been reported yet, open a new issue, providing as much detail as possible, including:
 
-- A clear and concise title.
-- A detailed description of the issue.
-- Steps to reproduce the problem.
-- Expected and actual behavior.
+-   A clear and concise title.
+-   A detailed description of the issue.
+-   Steps to reproduce the problem.
+-   Expected and actual behavior.
 
 ### Feature Proposals
 
