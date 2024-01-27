@@ -1,5 +1,11 @@
 # @dunkelhaiser/caesar-cipher
 
+## 2.0.4
+
+### Patch Changes
+
+- Updated documentation to include numeric support
+
 ## 2.0.3
 
 ### Patch Changes

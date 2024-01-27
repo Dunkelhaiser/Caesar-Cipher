@@ -83,6 +83,15 @@ CaesarCipher.decrypt("Olssv Tf Ilhbapmbs Dvysk!", 7); // => "Hello My Beautiful 
 CaesarCipher.encrypt(["Hello", "My", "Beautiful", "World!"], 7); // => ["Olssv", "Tf", "Ilhbapmbs", "Dvysk!"]
 ```
 
+### Numeric Support
+
+If numbers are provided in the alphabet they also will be shifted, otherwise they stay untouched.
+
+```ts
+CaesarCipher.encrypt("12345", 5); // => "12345"
+CaesarCipher.encrypt("12345", 5, "0123456789"); // => "67890"
+```
+
 ### Use own alphabet
 
 If you wish to use a custom alphabet for encryption and decryption, you can provide it as the third parameter:
